@@ -26,7 +26,7 @@ const SavedShows = () => {
   const movieRef = doc (db, 'users', `${user?.email}`)
   const deleteShow = async (passedId) => {
     try {
-        const result = movies.filter((item) => item.id != passedId)
+        const result = movies.filter((item) => item.id !== passedId)
         await updateDoc(movieRef, {
             savedShows: result,
         })
